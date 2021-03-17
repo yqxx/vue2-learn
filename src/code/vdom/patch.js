@@ -15,7 +15,6 @@ function isDef(s) {
  * @param {HTMLElement} ref 在其之前插入
  */
 function insert(parentElm, elm, ref) {
-  console.log(parentElm, elm);
   if (parentElm) {
     if (ref) {
       // 把新节点插入进ref前面
@@ -140,7 +139,7 @@ function updateChildren(parentElm, oldCh, newCh, removeOnly) {
   let newStartVnode = newCh[0];
   let newEndVnode = newCh[newEndIdx];
   let oldKeyToIdx, idxInOld, elmToMove, refElm;
-
+  debugger;
   const canMove = !removeOnly;
   while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
     if (isUndef(oldStartVnode)) {

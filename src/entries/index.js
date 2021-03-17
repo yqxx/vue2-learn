@@ -35,7 +35,28 @@ var render = function (newVnode) {
   oldVnode = newVnode;
 };
 
-render(ul);
+var div = createVNode("div", [
+  createVNode("q", [createTextVNode("q")]),
+  createVNode("w", [createTextVNode("w")]),
+  createVNode("e", [createTextVNode("e")]),
+  createVNode("r", [createTextVNode("r")]),
+  createVNode("t", [createTextVNode("t")]),
+  createVNode("y", [createTextVNode("y")]),
+]);
+
+render(div);
+
+setTimeout(function () {
+  ul = div = createVNode("div", [
+    createVNode("q", [createTextVNode("q")]),
+    createVNode("t", [createTextVNode("t")]),
+    createVNode("d", [createTextVNode("d")]),
+    createVNode("f", [createTextVNode("f")]),
+    createVNode("w", [createTextVNode("w")]),
+    createVNode("y", [createTextVNode("y")]),
+  ]);
+  render(ul);
+}, 1000);
 
 // setInterval(function () {
 //   ul = createVNode("ul", [
@@ -46,11 +67,11 @@ render(ul);
 //   render(ul);
 // }, 1000);
 
-setTimeout(function () {
-  ul = createVNode("ul", [
-    createVNode("ol", [createTextVNode("item1")]),
-    // createVNode("li", [createTextVNode("item2")]),
-    createVNode("li", [createTextVNode("item3")]),
-  ]);
-  render(ul);
-}, 1000);
+// setTimeout(function () {
+//   ul = createVNode("ul", [
+//     createVNode("ol", [createTextVNode("item1")]),
+//     // createVNode("li", [createTextVNode("item2")]),
+//     createVNode("li", [createTextVNode("item3")]),
+//   ]);
+//   render(ul);
+// }, 1000);
